@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+int main( ) {
+
+    int t, n, k ;
+
+    cin >> t ;
+    string*  result = new string [ t ] ;
+
+    for ( int i = 0 ; i < t ; i++ ) {
+
+        cin >> n ;
+        cin >> k ;
+        int* num = new int [ n ] ;
+        bool flag = false ;
+
+        for ( int j = 0 ; j < n ; j++ )
+            cin >> num[ j ] ;
+
+        for ( int l = 0 ; l < n ; l++ ) {
+
+            if ( num[ l ] == 1 ) {
+                flag = true ;
+                break ;
+                                 }
+                                        }
+
+
+        if ( flag == true )
+            result[ i ] = "YES" ;
+
+        else
+            result[ i ] = "NO" ;
+
+                                    }
+
+    for ( int i = 0 ; i < t ; i++ )
+        cout << result[ i ] << endl ;
+
+    return 0 ;
+           }
