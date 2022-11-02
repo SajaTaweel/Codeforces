@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std ;
+
+int main ( ) {
+    int n , f, l ;
+    int cost = 0 , t = 0 ;
+    cin >> t ;
+
+    int* result = new int[ t ] ;
+
+    for ( int j = 0 ; j < t ; j++ ) {
+        result[ j ] = 0 ;
+        cin >> n ;
+        int* a = new int[ n ] ;
+
+        for ( int i = 0 ; i < n ; i++ )
+            cin >> a[ i ] ;
+
+        cost = 0 ;
+        f = 0 ;
+        l = n - 1 ;
+
+        while ( true ) {
+
+
+            while ( a[ f ] == 0 && f < n )
+                f++ ;
+
+            while ( a[ l ] == 1 && l > 0 )
+                l-- ;
+
+            if ( f >= l ) 
+                break;
+    
+            else {
+                a[l] += a[f] ;
+                f++ ;
+                cost++ ;
+                result[ j ] = cost ;
+                 }
+                       }
+                                    }
+
+    for ( int i = 0 ; i < t ; i++ )
+        cout << result[ i ] << endl ;
+
+    return 0;
+
+             }
