@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+int main( ) {
+
+    int t , n , q , num , type ;
+    cin >> t ;
+
+    while ( t-- ) {
+
+        long long int sum = 0 ;
+        cin >> n >> q ;
+        int* a = new int[ n ] ;
+        int even = 0 , odd = 0 ;
+
+        for ( int j = 0 ; j < n ; j++ ) {
+
+            cin >> a[ j ] ;
+            sum += a[ j ] ;
+
+            if ( a[ j ] % 2 == 0 )
+                even++ ;
+
+            else
+                odd++ ;
+                                        }
+
+
+        for ( int x = 0 ; x < q ; x++ ) {
+
+            cin >> type >> num ;
+
+            if ( type == 0 ) {
+                sum += even * num ;
+                if ( num % 2 != 0 ) {
+
+                    even = 0;
+                    odd = n;
+                                    }
+                             }
+
+            else  if ( type == 1 ) {
+
+                sum += odd * num ;
+                if ( num % 2 != 0 ) {
+                    odd = 0 ;
+                    even = n ;
+                                    }
+                                   }
+
+            cout << sum << endl ;
+
+                                        }
+
+                  }
+
+    return 0 ;
+            }
