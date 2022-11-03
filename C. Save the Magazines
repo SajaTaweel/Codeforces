@@ -1,0 +1,54 @@
+#include <algorithm>
+#include <iostream>
+#include <vector>
+using namespace std ;
+
+int main( ) {
+
+    int t , n , sum ;
+    string lid ;
+    cin >> t ;
+
+    for ( int i = 0 ; i < t ; i++ ) {
+
+        cin >> n ;
+        int* a = new int [ n ] ;
+        sum = 0 ;
+        cin >> lid ;
+
+        for ( int j = 0 ; j < n ; j++ )
+            cin >> a[ j ] ;
+
+        for ( int l = 0 ; l < n ; l++ ) {
+            vector< int > result ;
+            int temp = 0 ;
+
+            if ( lid[ l ] == '0' ) {
+
+                while ( l + 1 < n && lid[ l + 1 ] == '1' ) {
+                    temp = 1 ;
+                    result.push_back( a[ l ] ) ;
+                    l++ ;
+                                                           }
+                if ( temp == 1 )
+                    result.push_back( a[ l ] ) ;
+
+                sort( result.begin( ) , result.end( ) , greater< int >( ) ) ;
+                int t = result.size( ) ;
+
+                for ( int m = 0 ; m < result.size( ) ; m++ ) {
+
+                    if ( m != t - 1 )
+                        sum += result[ m ] ;
+                                                             }
+
+                                   }
+
+            else if ( lid[ l ] == '1' ) {
+                sum += a[ l ] ;
+                                         }
+                                        }
+        cout << sum << endl ;
+                                    }
+    return 0 ;
+            }
