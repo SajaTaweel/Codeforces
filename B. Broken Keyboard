@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+
+	int t, n;
+	cin >> t;
+	
+	for ( int i = 0 ; i < t ; i++ ) {
+
+		cin >> n ;
+		string w ;
+		cin >> w ;
+		int count = 1 ;
+		bool flag = true ;
+
+		for ( int j = 0 ; j < n ; j++ ) {
+			if ( count % 2 == 0 ) {
+				if ( w[ j ] != w[ j + 1 ] ) {
+					flag = false ;
+					cout << "NO" << endl ;
+					break ;
+				                            }
+				else {
+					count = count + 1 ;
+					j = j + 1 ;
+				     }
+
+			                      }
+
+			else
+				count = count + 1 ;
+
+		                               }
+		if ( flag )
+			cout << "YES" << endl ;
+
+
+	                                }
+
+	return 0 ;
+           }
